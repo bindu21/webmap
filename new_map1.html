@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<head>    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script>L_PREFER_CANVAS=false; L_NO_TOUCH=false; L_DISABLE_3D=false;</script>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.3.4/dist/leaflet.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.3.4/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://rawcdn.githack.com/python-visualization/folium/master/folium/templates/leaflet.awesome.rotate.css"/>
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    
+    <meta name="viewport" content="width=device-width,
+        initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    <style>#map_e51e43b6cbaa45b09e3b4b44472e659e {
+        position: relative;
+        width: 100.0%;
+        height: 100.0%;
+        left: 0.0%;
+        top: 0.0%;
+        }
+    </style>
+</head>
+<body>    
+    
+    <div class="folium-map" id="map_e51e43b6cbaa45b09e3b4b44472e659e" ></div>
+</body>
+<script>    
+    
+    
+        var bounds = null;
+    
+
+    var map_e51e43b6cbaa45b09e3b4b44472e659e = L.map(
+        'map_e51e43b6cbaa45b09e3b4b44472e659e', {
+        center: [43.657422853165315, -79.3835548956374],
+        zoom: 6,
+        maxBounds: bounds,
+        layers: [],
+        worldCopyJump: false,
+        crs: L.CRS.EPSG3857,
+        zoomControl: true,
+        });
+
+    
+    
+    var tile_layer_983981b2c6864bf7a0ac1a969209b21f = L.tileLayer(
+        'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+        {
+        "attribution": null,
+        "detectRetina": false,
+        "maxNativeZoom": 18,
+        "maxZoom": 18,
+        "minZoom": 0,
+        "noWrap": false,
+        "opacity": 1,
+        "subdomains": "abc",
+        "tms": false
+}).addTo(map_e51e43b6cbaa45b09e3b4b44472e659e);
+    
+            var feature_group_e4ad415142c64e0c84d1889025a45f8b = L.featureGroup(
+                ).addTo(map_e51e43b6cbaa45b09e3b4b44472e659e);
+        
+    
+
+            var circle_adfef129d7c54114af0aee3e5b496221 = L.circle(
+                [43.657422853165315, -79.3835548956374],
+                {
+  "bubblingMouseEvents": true,
+  "color": "#3388ff",
+  "dashArray": null,
+  "dashOffset": null,
+  "fill": false,
+  "fillColor": "#3388ff",
+  "fillOpacity": 0.2,
+  "fillRule": "evenodd",
+  "lineCap": "round",
+  "lineJoin": "round",
+  "opacity": 1.0,
+  "radius": 10,
+  "stroke": true,
+  "weight": 3
+}
+                )
+                .addTo(feature_group_e4ad415142c64e0c84d1889025a45f8b);
+            
+    
+            var popup_0da5f3388d6344a3a4c5e7bd3c3b6a59 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_27a1cc219c4e4ae7bc8c09ebfe871008 = $(`<div id="html_27a1cc219c4e4ae7bc8c09ebfe871008" style="width: 100.0%; height: 100.0%;">New popup</div>`)[0];
+                popup_0da5f3388d6344a3a4c5e7bd3c3b6a59.setContent(html_27a1cc219c4e4ae7bc8c09ebfe871008);
+            
+
+            circle_adfef129d7c54114af0aee3e5b496221.bindPopup(popup_0da5f3388d6344a3a4c5e7bd3c3b6a59)
+            ;
+
+            
+        
+    
+        var marker_131ebf05b26b4990a7f108d6c18e97a6 = L.marker(
+            [43.657422853165315, -79.3835548956374],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_e4ad415142c64e0c84d1889025a45f8b);
+        
+    
+
+                var icon_b51b51eb41774c6287e48d88ff2db917 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_131ebf05b26b4990a7f108d6c18e97a6.setIcon(icon_b51b51eb41774c6287e48d88ff2db917);
+            
+    
+            var popup_78078375a89f47cca017370bd2bc4a77 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_b9acd65bc80c469395571a4f4842904f = $(`<div id="html_b9acd65bc80c469395571a4f4842904f" style="width: 100.0%; height: 100.0%;">Downtown Toronto</div>`)[0];
+                popup_78078375a89f47cca017370bd2bc4a77.setContent(html_b9acd65bc80c469395571a4f4842904f);
+            
+
+            marker_131ebf05b26b4990a7f108d6c18e97a6.bindPopup(popup_78078375a89f47cca017370bd2bc4a77)
+            ;
+
+            
+        
+    
+        var marker_5853d476eeb745fea21bc61e9205a92a = L.marker(
+            [44.657422853165315, -78.3835548956374],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_e4ad415142c64e0c84d1889025a45f8b);
+        
+    
+
+                var icon_e489fc5511364bf1917e9f3020741319 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_5853d476eeb745fea21bc61e9205a92a.setIcon(icon_e489fc5511364bf1917e9f3020741319);
+            
+    
+            var popup_451ffe0a36324d2c9f814ffa16cac7b5 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_83ff1344a4d34c79a10244b010fb2159 = $(`<div id="html_83ff1344a4d34c79a10244b010fb2159" style="width: 100.0%; height: 100.0%;">Downtown Toronto</div>`)[0];
+                popup_451ffe0a36324d2c9f814ffa16cac7b5.setContent(html_83ff1344a4d34c79a10244b010fb2159);
+            
+
+            marker_5853d476eeb745fea21bc61e9205a92a.bindPopup(popup_451ffe0a36324d2c9f814ffa16cac7b5)
+            ;
+
+            
+        
+    
+        var marker_ee6beb89060b4f96b07305854fad135e = L.marker(
+            [44.657422853165315, -78.3835548956374],
+            {
+                icon: new L.Icon.Default()
+                }
+            ).addTo(feature_group_e4ad415142c64e0c84d1889025a45f8b);
+        
+    
+
+                var icon_58bbcfbf14ae40e39ca209453c307d95 = L.AwesomeMarkers.icon({
+                    icon: 'info-sign',
+                    iconColor: 'white',
+                    markerColor: 'blue',
+                    prefix: 'glyphicon',
+                    extraClasses: 'fa-rotate-0'
+                    });
+                marker_ee6beb89060b4f96b07305854fad135e.setIcon(icon_58bbcfbf14ae40e39ca209453c307d95);
+            
+    
+            var popup_99dff1d5e7354167bd16adf38fd97f48 = L.popup({maxWidth: '300'
+            
+            });
+
+            
+                var html_8a447a1774f24e989c38e9c3c8cc973b = $(`<div id="html_8a447a1774f24e989c38e9c3c8cc973b" style="width: 100.0%; height: 100.0%;">Downtown Toronto</div>`)[0];
+                popup_99dff1d5e7354167bd16adf38fd97f48.setContent(html_8a447a1774f24e989c38e9c3c8cc973b);
+            
+
+            marker_ee6beb89060b4f96b07305854fad135e.bindPopup(popup_99dff1d5e7354167bd16adf38fd97f48)
+            ;
+
+            
+        
+</script>
