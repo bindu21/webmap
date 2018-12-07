@@ -53,10 +53,26 @@ map.save("new_map3.html")
 
 #adding circles instead of normal markers
 map=folium.Map(location=[lat[0],lon[0]],zoom_start=6,tiles="openstreetmap")
-fg=folium.FeatureGroup(name="My map")
+fg=folium.FeatureGroup(name="volcanos")
 
 for la,lo,el in zip(lat,lon,elev):
 	fg.add_child(folium.CircleMarker(location=[la,lo],radius=7,popup=str(el)+"meter",fill_color=find_my_color(el),color="grey"))
-	
+
+#add polygon layer by reading file world.json and putting colors depending upon population key	
+fgp=folium.FeatureGroup(name="population")
+fgp.add_child(folium.GeoJson(data=open('world.json','r',encoding='utf-8-sig').read(),
+                            style_function=lambda x:{'fillColor':'yellow' if x['properties']['POP2005']<100000 
+                                                    else 'white' if 100000<=x['properties']['POP2005']<200000 
+                                                    else 'blue'}))
+													
 map.add_child(fg)
+map.add_child(fgp)
+													
+#add a layer control here as map child
+#if you add this line before map.add_child(fg), no layer will be shown
+map.add_child(folium.LayerControl())
+
 map.save("new_map4.html")
+
+
+
