@@ -22,3 +22,20 @@ for cor in [[r.latitude,r.longitude],[r.latitude+1,r.longitude+1],[r.latitude+1,
 map.add_child(fg)
 map.save("new_map1.html")
 
+
+#adding multiple cordinates and popup msg from a comma seprated txt file
+r_file=pandas.read_csv("Volcanoes.txt")
+
+#fetch latitude,longitue and elevation from the table in list
+lat=list(r_file.LAT)
+lon=list(r_file.LON)
+elev=list(r_file.ELEV)
+
+for la,lo,el in zip(lat,lon,elev):
+	fg.add_child(folium.Marker(location=[la,lo],popup=str(el)+"meter",icon=folium.Icon(color="blue")))
+	
+map.add_child(fg)
+map.save("new_map2.html")
+
+
+
