@@ -2,6 +2,13 @@ import folium
 import pandas
 from geopy.geocoders import ArcGIS
 
+def find_my_color(elev):
+	if elev<=1500:
+		return "blue"
+	elif 1500<elev<2300:
+		return "green"
+	else:
+		return "red"
 nom=ArcGIS()
 r=nom.geocode("39 Elm Street,Toronto,Canada")
 
@@ -36,6 +43,13 @@ for la,lo,el in zip(lat,lon,elev):
 	
 map.add_child(fg)
 map.save("new_map2.html")
+
+for la,lo,el in zip(lat,lon,elev):
+	fg.add_child(folium.Marker(location=[la,lo],popup=str(el)+"meter",icon=folium.Icon(color=find_my_color(el))))
+	
+map.add_child(fg)
+map.save("new_map3.html")
+
 
 
 
