@@ -4,9 +4,9 @@ from geopy.geocoders import ArcGIS
 
 def find_my_color(elev):
 	if elev<=1500:
-		return "blue"
-	elif 1500<elev<2300:
 		return "green"
+	elif 1500<elev<3000:
+		return "blue"
 	else:
 		return "red"
 nom=ArcGIS()
@@ -51,5 +51,12 @@ map.add_child(fg)
 map.save("new_map3.html")
 
 
+#adding circles instead of normal markers
+map=folium.Map(location=[lat[0],lon[0]],zoom_start=6,tiles="openstreetmap")
+fg=folium.FeatureGroup(name="My map")
 
-
+for la,lo,el in zip(lat,lon,elev):
+	fg.add_child(folium.CircleMarker(location=[la,lo],radius=7,popup=str(el)+"meter",fill_color=find_my_color(el),color="grey"))
+	
+map.add_child(fg)
+map.save("new_map4.html")
